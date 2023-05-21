@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-primary: 'Roboto', sans-serif;
+  --white: #fff;
+  --card-hover: #02799D;
+  --card-bg: #E1E1E6;
+  --primary-color: #323238;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--white);
+  display: flex;
+  gap: 19.2rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  display: flex;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+  margin-bottom: 1.7rem;
+}
+
+.controls {
+  display: flex;
+  gap: 4rem;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sounds {
+  max-width: 30.8rem;
+  display: grid;
+  grid-template-areas: 
+  "A B"
+  "C D";
+  gap: 3.2rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-bg);
+  border-radius: 2.4rem;
+  width: 13.8rem;
+  height: 15.2rem;
+  padding: 4.8rem 4.7rem;
+}
+
+
+.active {
+  background-color: var(--card-hover);
+}
+
+.active svg {
+  fill: #fff;
+}
