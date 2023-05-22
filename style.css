@@ -73,6 +73,6 @@ button {
   background-color: var(--card-hover);
 }
 
-.active svg {
+.active svg path {
   fill: #fff;
 }
