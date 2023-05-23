@@ -1,3 +1,4 @@
+// Variables
 const btnFlorest = document.querySelector('#florest')
 const btnRain = document.querySelector('#rain')
 const btnCoffe = document.querySelector('#coffe')
@@ -8,10 +9,14 @@ const btnMore = document.querySelector('.more')
 const btnLess = document.querySelector('.less')
 const minutesDisplay = document.querySelector('#minutes')
 const secondsDisplay = document.querySelector('#seconds')
+const coffeAudio = new Audio ("../assets/coffe.waw")
 let minutes = Number(minutesDisplay.textContent)
 let seconds = Number(secondsDisplay.textContent)
 let timerTimeOut
 
+
+
+// Functions
 
 function lessMinutes () {
   let newMinutes = Number(minutesDisplay.textContent) - 5
@@ -63,6 +68,12 @@ function countdown(){
   }, 1000)
 }
 
+function soundCoffe () {
+  coffeAudio.play()
+}
+
+
+// Elements and Events
 btnPlay.addEventListener('click', function() {
   countdown()
 })
@@ -85,6 +96,7 @@ btnCoffe.addEventListener('click', () => {
   btnFire.classList.remove('active')
   btnRain.classList.remove('active')
   btnFlorest.classList.remove('active')
+  soundCoffe()
 })
 
 btnRain.addEventListener('click', () => {
@@ -107,3 +119,4 @@ btnFire.addEventListener('click', () => {
   btnCoffe.classList.remove('active')
   btnFlorest.classList.remove('active')
 })
+
