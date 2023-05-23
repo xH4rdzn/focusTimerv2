@@ -1,1 +1,0 @@
-import {btnPlay, btnStop, btnMore, btnLess} from './elements.js'
