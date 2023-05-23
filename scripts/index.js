@@ -9,7 +9,10 @@ const btnMore = document.querySelector('.more')
 const btnLess = document.querySelector('.less')
 const minutesDisplay = document.querySelector('#minutes')
 const secondsDisplay = document.querySelector('#seconds')
-const coffeAudio = new Audio ("../assets/coffe.waw")
+const rainAudio = new Audio ("https://github.com/xH4rdzn/focusTimerv2/blob/4ff12a393c03104c10dd62f4af7f9167895cb8a4/assets/rain.wav?raw=true")
+const coffeAudio = new Audio ("https://github.com/xH4rdzn/focusTimerv2/blob/4ff12a393c03104c10dd62f4af7f9167895cb8a4/assets/coffe.wav?raw=true")
+const fireAudio = new Audio ("https://github.com/xH4rdzn/focusTimerv2/blob/4ff12a393c03104c10dd62f4af7f9167895cb8a4/assets/fireplace.wav?raw=true")
+const florestAudio = new Audio ("https://github.com/xH4rdzn/focusTimerv2/blob/4ff12a393c03104c10dd62f4af7f9167895cb8a4/assets/florest.wav?raw=true")
 let minutes = Number(minutesDisplay.textContent)
 let seconds = Number(secondsDisplay.textContent)
 let timerTimeOut
@@ -68,8 +71,37 @@ function countdown(){
   }, 1000)
 }
 
+
+function soundFlorest () {
+  florestAudio.play()
+}
+
+function soundRain () {
+  rainAudio.play()
+}
+
 function soundCoffe () {
   coffeAudio.play()
+}
+
+function soudFire () {
+  fireAudio.play()
+}
+
+function soundStopCoffe () {
+  coffeAudio.pause()
+}
+
+function soundStopFire () {
+  fireAudio.pause()
+}
+
+function soundStopFlorest () {
+  florestAudio.pause()
+}
+
+function soundStopRain () {
+  rainAudio.pause()
 }
 
 
@@ -97,6 +129,9 @@ btnCoffe.addEventListener('click', () => {
   btnRain.classList.remove('active')
   btnFlorest.classList.remove('active')
   soundCoffe()
+  soundStopFire()
+  soundStopFlorest()
+  soundStopRain()
 })
 
 btnRain.addEventListener('click', () => {
@@ -104,6 +139,10 @@ btnRain.addEventListener('click', () => {
   btnFire.classList.remove('active')
   btnCoffe.classList.remove('active')
   btnFlorest.classList.remove('active')
+  soundRain()
+  soundStopFire()
+  soundStopFlorest()
+  soundStopCoffe()
 })
 
 btnFlorest.addEventListener('click', () => {
@@ -111,6 +150,10 @@ btnFlorest.addEventListener('click', () => {
   btnFire.classList.remove('active')
   btnCoffe.classList.remove('active')
   btnRain.classList.remove('active')
+  soundFlorest()
+  soundStopCoffe()
+  soundStopFire()
+  soundStopRain()
 })
 
 btnFire.addEventListener('click', () => {
@@ -118,5 +161,9 @@ btnFire.addEventListener('click', () => {
   btnRain.classList.remove('active')
   btnCoffe.classList.remove('active')
   btnFlorest.classList.remove('active')
+  soudFire()
+  soundStopCoffe()
+  soundStopFlorest()
+  soundStopRain()
 })
 
